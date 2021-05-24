@@ -16,11 +16,13 @@ app.use(cors());
 // Middleware
 app.use("/posts", postRoutes);
 
+const CONNECTION_URL =
+  "mongodb+srv://Pratap_Tyagi:0000@cluster0.fhpyi.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 // MongoDb Connection
 const PORT = process.env.PORT || 8080;
 
 mongoose
-  .connect(process.env.CONNECTION_URL, {
+  .connect(CONNECTION_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
